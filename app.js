@@ -148,20 +148,143 @@
 
 // ASYNCHRONOUS: MORE THAN ONE AT AT TIME
 
-// long running function
-function waitThreeSeconds() {
-  var ms = 3000 + new Date().getTime();
-  while (new Date() < ms) {}
-  console.log('finished function');
-}
+// // long running function
+// function waitThreeSeconds() {
+//   var ms = 3000 + new Date().getTime();
+//   while (new Date() < ms) {}
+//   console.log('finished function');
+// }
 
-function clickHandler() {
-  console.log('click event!');
-}
+// function clickHandler() {
+//   console.log('click event!');
+// }
 
-// listen for the click event
+// // listen for the click event
 
-document.addEventListener('click', clickHandler);
+// document.addEventListener('click', clickHandler);
 
-waitThreeSeconds();
-console.log('finished execution');
+// waitThreeSeconds();
+// console.log('finished execution');
+
+// ==========================================================
+// CONCEPTUAL ASIDE: TYPES AND JAVASCRIPT
+// ==========================================================
+
+// DYNAMIC TYPING: YOU DON'T TELL THE ENGINE WHAT TYPE OF DATA A VARIABLE HOLDS, IT FIGURES IT OUT WHILE YOUR CODE IS RUNNING.
+
+// STATIC TYPING
+// bool isNew = 'hello'; ***Java***
+
+// DYNAMIC TYPING
+// var isNew = true;
+// isNew = 'Yup';
+// isNew = 1;
+
+// ==========================================================
+// PRIMITIVE TYPES
+// ==========================================================
+
+// PRIMITIVE TYPE: A TYPE OF DATA THAT REPRESENTS A SINGLE VALUE
+
+// 1. "UNDEFINED" - REPRESENTS LACK OF EXISTENCE
+// 2. "NULL" - REPRESENTS LACK OF EXISTENCE OR NO VALUE
+// 3. "BOOLEAN" - TRUE OR FALSE
+// 4. "NUMBER" - FLOATING POINT NUMBER (THERE'S ALWAYS SOME DECIMALS).
+// 5. "STRING" - A SEQUENCE OF CHARACTERS (BOTH '' AND "" CAN BE USED)
+// 6. "SYMBOL" - USED IN ES6...
+
+// ==========================================================
+// CONCEPTUAL ASIDE: OPERATORS
+// ==========================================================
+
+// OPERATOR: A SPECIAL FUNCTION THAT IS SYNTACTICALLY (WRITTEN) DIFFERENTLY
+
+// var a = 4 > 3;
+// console.log(a);
+
+// ==========================================================
+// OPERATOR PRECEDENCE AND ASSOCIATIVITY
+// ==========================================================
+
+// OPERATOR PRECEDENCE: WHICH OPERATOR FUNCTION GETS CALLED FIRST
+
+// OPERATOR ASSOCIATIVITY: WHAT ORDER OPERATOR FUNCTIONS GET CALLED IN: LEFT-TO-RIGHT OR RIGHT-TO-LEFT
+
+// var a = 2,
+//   b = 3,
+//   c = 4;
+
+// a = b = c;
+// console.log(a);
+// console.log(b);
+// console.log(c);
+
+// var a = (3 + 4) * 5;
+
+// console.log(a);
+
+// ==========================================================
+// CONCEPTUAL ASIDE: COERCION
+// ==========================================================
+
+// var a = 1,
+//   b = '2';
+
+// console.log(a + b);
+
+// ==========================================================
+// COMPARISON OPERATORS
+// ==========================================================
+
+// console.log(1 < 2 < 3);
+
+// let x = Number(null);
+
+// console.log(x);
+
+// 3 == '3' true;
+// 3 === '3' false;
+
+// var a = 0;
+// var b = false;
+
+// if (a === b) {
+//   console.log('They are equal!');
+// } else {
+//   console.log('Not Equal');
+// }
+
+// ==========================================================
+// EXISTENCE AND BOOLEANS
+// ==========================================================
+
+// var a;
+
+// a = null;
+// a = '';
+// a = ' ';
+// a = 0;
+
+// if (a || a === 0) {
+//   console.log('I AM DEFINED');
+// } else {
+//   console.log('I AM UNDEFINED');
+// }
+
+// ==========================================================
+// DEFAULT VALUES
+// ==========================================================
+
+// function greet(name) {
+//   name = name || '<Your name here>';
+//   console.log(`Hello ${name}`);
+// }
+
+// greet();
+// greet('DAVIN');
+
+// ==========================================================
+// FRAMEWORK ASIDE
+// ==========================================================
+
+console.log(libraryName);
