@@ -482,43 +482,66 @@
 // OBJECTS, FUNCTIONS, AND 'this'
 // ==========================================================
 
-console.log(this);
+// console.log(this);
 
-function a() {
-  console.log(this);
-  this.newvariable = 'Hello';
-}
+// function a() {
+//   console.log(this);
+//   this.newvariable = 'Hello';
+// }
 
-var b = () => {
-  console.log(this);
-};
+// var b = () => {
+//   console.log(this);
+// };
 
-a();
-console.log(newvariable);
-b();
+// a();
+// console.log(newvariable);
+// b();
 
-var c = {
-  name: 'The c object',
-  log: function () {
-    var self = this;
+// var c = {
+//   name: 'The c object',
+//   log: function () {
+//     var self = this;
 
-    this.name = 'updated c Object';
-    console.log(self);
+//     this.name = 'updated c Object';
+//     console.log(self);
 
-    var setname = function (newname) {
-      self.name = newname;
-    };
+//     var setname = function (newname) {
+//       self.name = newname;
+//     };
 
-    setname('Updated again! The c object');
-    console.log(self);
+//     setname('Updated again! The c object');
+//     console.log(self);
+//   },
+
+//   log2: () => {
+//     console.log(this);
+//   },
+// };
+
+// c.log();
+// c.log2();
+
+// console.log(name);
+
+// ==========================================================
+// CONCEPTUAL ASIDE: ARRAYS - COLLECTIONS OF ANYTHING
+// ==========================================================
+
+// var arr = new Array();
+var arr = [
+  1,
+  false,
+  {
+    name: 'Davin',
+    address: '1000 Main St',
   },
-
-  log2: () => {
-    console.log(this);
+  function (name) {
+    var greeting = 'Hello';
+    console.log(`${greeting} ${name}`);
   },
-};
+  'hello',
+];
 
-c.log();
-c.log2();
+console.log(arr);
 
-console.log(name);
+arr[3](arr[2].name);
