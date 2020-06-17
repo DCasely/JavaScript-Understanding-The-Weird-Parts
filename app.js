@@ -380,15 +380,31 @@
 // JSON AND OBJECT LITERALS
 // ==========================================================
 
-var objectLiteral = {
-  firstname: 'Mary',
-  isAProgrammer: true,
-};
+// var objectLiteral = {
+//   firstname: 'Mary',
+//   isAProgrammer: true,
+// };
 
-console.log(JSON.stringify(objectLiteral));
+// console.log(JSON.stringify(objectLiteral));
 
-// JSON PROPERTIES MUST BE WRAPPED IN QUOTES
-var jsonValue = '{ "firstname": "Mary",
-    "isAProgrammer": true }'
+// // JSON PROPERTIES MUST BE WRAPPED IN QUOTES
+// var jsonValue = JSON.parse('{ "firstname": "Mary",
+//     "isAProgrammer": true }');
 
-console.log(jsonValue);
+// console.log(jsonValue);
+
+// ==========================================================
+// FUNCTIONS AND OBJECTS
+// ==========================================================
+
+// FIRST CLASS FUNCTIONS: EVERYTHING YOU CAN DO WITH OTHER TYPES YOU CAN DO WITH FUNCTIONS.
+
+function greet() {
+  console.log('Hi');
+}
+
+// You can attach a property to a function just like a regular object because functions are objects!
+greet.language = 'english';
+
+greet();
+console.log(greet.language);
