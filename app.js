@@ -354,24 +354,41 @@
 // FRAMEWORK ASIDE: FAKING NAMESPACES
 // ==========================================================
 
-// NAMESPACE: A CONTAINER FOR VARIABLES AND FUNCTIONS
+// // NAMESPACE: A CONTAINER FOR VARIABLES AND FUNCTIONS
 
-var greet = 'Hello!';
-var greet = 'Hola!';
+// var greet = 'Hello!';
+// var greet = 'Hola!';
 
-// console.log(greet);
+// // console.log(greet);
 
-var english = {
-  greetings: {
-    basic: 'Hello',
-  },
+// var english = {
+//   greetings: {
+//     basic: 'Hello',
+//   },
+// };
+
+// var spanish = {
+//   greetings: {
+//     basic: 'Hola',
+//   },
+// };
+
+// console.log(english.greetings.basic);
+// console.log(spanish.greetings.basic);
+
+// ==========================================================
+// JSON AND OBJECT LITERALS
+// ==========================================================
+
+var objectLiteral = {
+  firstname: 'Mary',
+  isAProgrammer: true,
 };
 
-var spanish = {
-  greetings: {
-    basic: 'Hola',
-  },
-};
+console.log(JSON.stringify(objectLiteral));
 
-console.log(english.greetings.basic);
-console.log(spanish.greetings.basic);
+// JSON PROPERTIES MUST BE WRAPPED IN QUOTES
+var jsonValue = '{ "firstname": "Mary",
+    "isAProgrammer": true }'
+
+console.log(jsonValue);
