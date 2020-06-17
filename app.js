@@ -527,21 +527,49 @@
 // CONCEPTUAL ASIDE: ARRAYS - COLLECTIONS OF ANYTHING
 // ==========================================================
 
-// var arr = new Array();
-var arr = [
-  1,
-  false,
-  {
-    name: 'Davin',
-    address: '1000 Main St',
-  },
-  function (name) {
-    var greeting = 'Hello';
-    console.log(`${greeting} ${name}`);
-  },
-  'hello',
-];
+// // var arr = new Array();
+// var arr = [
+//   1,
+//   false,
+//   {
+//     name: 'Davin',
+//     address: '1000 Main St',
+//   },
+//   function (name) {
+//     var greeting = 'Hello';
+//     console.log(`${greeting} ${name}`);
+//   },
+//   'hello',
+// ];
 
-console.log(arr);
+// console.log(arr);
 
-arr[3](arr[2].name);
+// arr[3](arr[2].name);
+
+// ==========================================================
+// ARGUMENTS AND SPREAD
+// ==========================================================
+
+// ARGUMENTS: THE PARAMETERS YOU PASS TO A FUNCTION
+
+function greet(firstname, lastname, language, ...other) {
+  //   firstname = firstname || 'Davin';
+  //   lastname = lastname || 'Casely';
+  //   language = language || 'en';
+
+  if (arguments.length === 0) {
+    console.log('Missing Parameters');
+    console.log('--------------------');
+  }
+
+  console.log(firstname);
+  console.log(lastname);
+  console.log(language);
+  console.log('arg[0]: ' + arguments[0]);
+  console.log('==============');
+}
+
+greet();
+greet('John');
+greet('John', 'Sally');
+greet('John', 'Sally', 'Mike', '111 main st', 'new york');
