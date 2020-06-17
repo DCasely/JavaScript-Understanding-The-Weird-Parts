@@ -287,4 +287,31 @@
 // FRAMEWORK ASIDE
 // ==========================================================
 
-console.log(libraryName);
+// console.log(libraryName);
+
+// ==========================================================
+// OBJECTS AND FUNCTIONS
+// ==========================================================
+
+var person = new Object();
+
+person['firstname'] = 'Davin';
+person['lastname'] = 'Casely';
+
+var firstNameProperty = 'firstname';
+
+console.log(person);
+console.log(person[firstNameProperty]);
+
+console.log(person.firstname);
+console.log(person.lastname);
+
+person.address = new Object();
+person.address.street = '100 Main St';
+person.address.city = 'Miami';
+person.address.state = 'Florida';
+
+console.log(person.address);
+console.log(person.address.street);
+console.log(person.address.city);
+console.log(person['address']['state']);
