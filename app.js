@@ -399,12 +399,40 @@
 
 // FIRST CLASS FUNCTIONS: EVERYTHING YOU CAN DO WITH OTHER TYPES YOU CAN DO WITH FUNCTIONS.
 
-function greet() {
-  console.log('Hi');
-}
+// function greet() {
+//   console.log('Hi');
+// }
 
-// You can attach a property to a function just like a regular object because functions are objects!
-greet.language = 'english';
+// // You can attach a property to a function just like a regular object because functions are objects!
+// greet.language = 'english';
+
+// greet();
+// console.log(greet.language);
+
+// ==========================================================
+// FUNCTION STATEMENTS AND FUNCTION EXPRESSIONS
+// ==========================================================
+
+// EXPRESSION: A UNIT OF CODE THAT RESULTS IN A VALUE
 
 greet();
-console.log(greet.language);
+
+function greet() {
+  console.log('hi');
+}
+
+// anonymousGreet(); Uncaught Error: undefined is not a function.
+
+var anonymousGreet = () => {
+  console.log('hi');
+};
+
+anonymousGreet();
+
+function log(a) {
+  a();
+}
+
+log(() => {
+  console.log('hi');
+});
