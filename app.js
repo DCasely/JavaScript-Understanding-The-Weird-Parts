@@ -607,10 +607,32 @@
 // DANGEROUS ASIDE: AUTOMATIC SEMICOLON INSERTION
 // ==========================================================
 
-function getPerson() {
-  return {
-    name: 'Davin',
-  };
-}
+// function getPerson() {
+//   return {
+//     name: 'Davin',
+//   };
+// }
 
-console.log(getPerson());
+// console.log(getPerson());
+
+// ==========================================================
+// WHITESPACE: INVISIBLE CHARACTERS THAT CREATE LITERAL 'SPACE' IN YOUR WRITTEN CODE
+// ==========================================================
+
+var // name of the person
+  firstname,
+  // last name of the person
+  lastname,
+  // the language
+  // can be 'en' or 'es'
+  language;
+
+var person = {
+  //the first name
+  firstname: 'John',
+  // the last name
+  // (always required)
+  lastname: 'Doe',
+};
+
+console.log(person);
