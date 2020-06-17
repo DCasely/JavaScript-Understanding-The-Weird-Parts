@@ -552,24 +552,49 @@
 
 // ARGUMENTS: THE PARAMETERS YOU PASS TO A FUNCTION
 
-function greet(firstname, lastname, language, ...other) {
-  //   firstname = firstname || 'Davin';
-  //   lastname = lastname || 'Casely';
-  //   language = language || 'en';
+// function greet(firstname, lastname, language, ...other) {
+//   //   firstname = firstname || 'Davin';
+//   //   lastname = lastname || 'Casely';
+//   //   language = language || 'en';
 
-  if (arguments.length === 0) {
-    console.log('Missing Parameters');
-    console.log('--------------------');
+//   if (arguments.length === 0) {
+//     console.log('Missing Parameters');
+//     console.log('--------------------');
+//   }
+
+//   console.log(firstname);
+//   console.log(lastname);
+//   console.log(language);
+//   console.log('arg[0]: ' + arguments[0]);
+//   console.log('==============');
+// }
+
+// greet();
+// greet('John');
+// greet('John', 'Sally');
+// greet('John', 'Sally', 'Mike', '111 main st', 'new york');
+
+// ==========================================================
+// FRAMEWORK ASIDE FUNCTION OVERLOADING
+// ==========================================================
+
+function greet(firstname, lastname, language = 'en') {
+  if (language === 'en') {
+    console.log(`Hello ${firstname} ${lastname}`);
   }
 
-  console.log(firstname);
-  console.log(lastname);
-  console.log(language);
-  console.log('arg[0]: ' + arguments[0]);
-  console.log('==============');
+  if (language === 'es') {
+    console.log(`Hola ${firstname} ${lastname}`);
+  }
 }
 
-greet();
-greet('John');
-greet('John', 'Sally');
-greet('John', 'Sally', 'Mike', '111 main st', 'new york');
+function greetEnglish(firstname, lastname) {
+  greet(firstname, lastname, 'en');
+}
+
+function greetSpanish(firstname, lastname) {
+  greet(firstname, lastname, 'es');
+}
+
+greetEnglish('John', 'Doe');
+greetSpanish('John', 'Doe');
