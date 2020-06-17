@@ -441,39 +441,84 @@
 // CONCEPTUAL ASIDE: BY VALUE VS BY REFERENCE
 // ==========================================================
 
-// by value (primitives)
-var a = 3;
-var b;
+// // by value (primitives)
+// var a = 3;
+// var b;
 
-b = a;
-a = 2;
+// b = a;
+// a = 2;
 
-console.log(a);
-console.log(b);
+// console.log(a);
+// console.log(b);
 
-// by reference (all objects (including functions))
-var c = {
-  greeting: 'hi',
-};
+// // by reference (all objects (including functions))
+// var c = {
+//   greeting: 'hi',
+// };
 
-var d;
+// var d;
 
-d = c;
-c.greeting = 'hello';
+// d = c;
+// c.greeting = 'hello';
 
-console.log(c);
-console.log(d);
+// console.log(c);
+// console.log(d);
 
-// by reference (even as parameters)
-function changeGreeting(obj) {
-  obj.greeting = 'Hola';
+// // by reference (even as parameters)
+// function changeGreeting(obj) {
+//   obj.greeting = 'Hola';
+// }
+
+// changeGreeting(d);
+// console.log(c);
+// console.log(d);
+
+// // equals operator sets up new memory space (new address)
+// c = { greeting: 'howdy' };
+// console.log(c);
+// console.log(d);
+
+// ==========================================================
+// OBJECTS, FUNCTIONS, AND 'this'
+// ==========================================================
+
+console.log(this);
+
+function a() {
+  console.log(this);
+  this.newvariable = 'Hello';
 }
 
-changeGreeting(d);
-console.log(c);
-console.log(d);
+var b = () => {
+  console.log(this);
+};
 
-// equals operator sets up new memory space (new address)
-c = { greeting: 'howdy' };
-console.log(c);
-console.log(d);
+a();
+console.log(newvariable);
+b();
+
+var c = {
+  name: 'The c object',
+  log: function () {
+    var self = this;
+
+    this.name = 'updated c Object';
+    console.log(self);
+
+    var setname = function (newname) {
+      self.name = newname;
+    };
+
+    setname('Updated again! The c object');
+    console.log(self);
+  },
+
+  log2: () => {
+    console.log(this);
+  },
+};
+
+c.log();
+c.log2();
+
+console.log(name);
