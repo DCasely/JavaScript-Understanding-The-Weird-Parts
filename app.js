@@ -293,25 +293,59 @@
 // OBJECTS AND FUNCTIONS
 // ==========================================================
 
-var person = new Object();
+// var person = new Object();
 
-person['firstname'] = 'Davin';
-person['lastname'] = 'Casely';
+// person['firstname'] = 'Davin';
+// person['lastname'] = 'Casely';
 
-var firstNameProperty = 'firstname';
+// var firstNameProperty = 'firstname';
 
-console.log(person);
-console.log(person[firstNameProperty]);
+// console.log(person);
+// console.log(person[firstNameProperty]);
 
-console.log(person.firstname);
-console.log(person.lastname);
+// console.log(person.firstname);
+// console.log(person.lastname);
 
-person.address = new Object();
-person.address.street = '100 Main St';
-person.address.city = 'Miami';
-person.address.state = 'Florida';
+// person.address = new Object();
+// person.address.street = '100 Main St';
+// person.address.city = 'Miami';
+// person.address.state = 'Florida';
 
-console.log(person.address);
-console.log(person.address.street);
-console.log(person.address.city);
-console.log(person['address']['state']);
+// console.log(person.address);
+// console.log(person.address.street);
+// console.log(person.address.city);
+// console.log(person['address']['state']);
+
+// ==========================================================
+// OBJECTS AND OBJECT LITERALS
+// ==========================================================
+
+var Davin = {
+  firstname: 'Davin',
+  lastname: 'Casely',
+
+  address: {
+    street: '100 Main St.',
+    city: 'Miami',
+    state: 'FL',
+  },
+};
+
+function greet(person) {
+  console.log(`Hi ${person.firstname} ${person.lastname}`);
+}
+
+greet(Davin);
+
+greet({
+  firstname: 'Mary',
+  lastname: 'Doe',
+});
+
+Davin.address2 = {
+  street: '300 Main Ave',
+  city: 'Miami Beach',
+  state: 'FL',
+};
+
+console.log(Davin.address2);
