@@ -615,24 +615,66 @@
 
 // console.log(getPerson());
 
-// ==========================================================
+// =================================================================================
 // WHITESPACE: INVISIBLE CHARACTERS THAT CREATE LITERAL 'SPACE' IN YOUR WRITTEN CODE
-// ==========================================================
+// =================================================================================
 
-var // name of the person
-  firstname,
-  // last name of the person
-  lastname,
-  // the language
-  // can be 'en' or 'es'
-  language;
+// var // name of the person
+//   firstname,
+//   // last name of the person
+//   lastname,
+//   // the language
+//   // can be 'en' or 'es'
+//   language;
 
-var person = {
-  //the first name
-  firstname: 'John',
-  // the last name
-  // (always required)
-  lastname: 'Doe',
+// var person = {
+//   //the first name
+//   firstname: 'John',
+//   // the last name
+//   // (always required)
+//   lastname: 'Doe',
+// };
+
+// console.log(person);
+
+// =================================================================================
+// IMMEDIATELY INVOKED FUNCTION EXPRESSIONS (IIFE)S
+// =================================================================================
+
+// function statement
+function greet(name) {
+  console.log(`Hello ${name}`);
+}
+
+greet('Davin');
+
+// function expression
+var greetFunc = (name) => {
+  console.log(`Hello ${name}`);
 };
 
-console.log(person);
+greetFunc('John');
+
+// using ann Immediately Invoked Function Expression (IIFE)
+var greeting = (function (name = 'Casely') {
+  return `Hello ${name}`;
+})('David');
+
+console.log(greeting);
+
+('I am a string');
+3;
+{
+  name: 'Dave';
+}
+
+var firstname = 'Jack';
+
+(function (name) {
+  var greeting = 'Hello';
+  console.log(`${greeting} ${name}`);
+})(firstname); // IIFE
+
+(name) => {
+  return `Hello ${name}`;
+};
