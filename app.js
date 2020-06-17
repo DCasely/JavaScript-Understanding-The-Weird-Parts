@@ -320,32 +320,58 @@
 // OBJECTS AND OBJECT LITERALS
 // ==========================================================
 
-var Davin = {
-  firstname: 'Davin',
-  lastname: 'Casely',
+// var Davin = {
+//   firstname: 'Davin',
+//   lastname: 'Casely',
 
-  address: {
-    street: '100 Main St.',
-    city: 'Miami',
-    state: 'FL',
+//   address: {
+//     street: '100 Main St.',
+//     city: 'Miami',
+//     state: 'FL',
+//   },
+// };
+
+// function greet(person) {
+//   console.log(`Hi ${person.firstname} ${person.lastname}`);
+// }
+
+// greet(Davin);
+
+// greet({
+//   firstname: 'Mary',
+//   lastname: 'Doe',
+// });
+
+// Davin.address2 = {
+//   street: '300 Main Ave',
+//   city: 'Miami Beach',
+//   state: 'FL',
+// };
+
+// console.log(Davin.address2);
+
+// ==========================================================
+// FRAMEWORK ASIDE: FAKING NAMESPACES
+// ==========================================================
+
+// NAMESPACE: A CONTAINER FOR VARIABLES AND FUNCTIONS
+
+var greet = 'Hello!';
+var greet = 'Hola!';
+
+// console.log(greet);
+
+var english = {
+  greetings: {
+    basic: 'Hello',
   },
 };
 
-function greet(person) {
-  console.log(`Hi ${person.firstname} ${person.lastname}`);
-}
-
-greet(Davin);
-
-greet({
-  firstname: 'Mary',
-  lastname: 'Doe',
-});
-
-Davin.address2 = {
-  street: '300 Main Ave',
-  city: 'Miami Beach',
-  state: 'FL',
+var spanish = {
+  greetings: {
+    basic: 'Hola',
+  },
 };
 
-console.log(Davin.address2);
+console.log(english.greetings.basic);
+console.log(spanish.greetings.basic);
