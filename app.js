@@ -641,40 +641,54 @@
 // IMMEDIATELY INVOKED FUNCTION EXPRESSIONS (IIFE)S
 // =================================================================================
 
-// function statement
-function greet(name) {
-  console.log(`Hello ${name}`);
-}
+// // function statement
+// function greet(name) {
+//   console.log(`Hello ${name}`);
+// }
 
-greet('Davin');
+// greet('Davin');
 
-// function expression
-var greetFunc = (name) => {
-  console.log(`Hello ${name}`);
-};
+// // function expression
+// var greetFunc = (name) => {
+//   console.log(`Hello ${name}`);
+// };
 
-greetFunc('John');
+// greetFunc('John');
 
-// using ann Immediately Invoked Function Expression (IIFE)
-var greeting = (function (name = 'Casely') {
-  return `Hello ${name}`;
-})('David');
+// // using ann Immediately Invoked Function Expression (IIFE)
+// var greeting = (function (name = 'Casely') {
+//   return `Hello ${name}`;
+// })('David');
+
+// console.log(greeting);
+
+// ('I am a string');
+// 3;
+// {
+//   name: 'Dave';
+// }
+
+// var firstname = 'Jack';
+
+// (function (name) {
+//   var greeting = 'Hello';
+//   console.log(`${greeting} ${name}`);
+// })(firstname); // IIFE
+
+// (name) => {
+//   return `Hello ${name}`;
+// };
+
+// =================================================================================
+// FRAMEWORK ASIDE: IIFES AND SAFE CODE
+// =================================================================================
+
+// IIFE
+(function (global, name) {
+  var greeting = 'Hello';
+  global.greeting = 'Hello';
+
+  console.log(`${greeting} ${name}`);
+})(window, 'Davin'); // IIFE
 
 console.log(greeting);
-
-('I am a string');
-3;
-{
-  name: 'Dave';
-}
-
-var firstname = 'Jack';
-
-(function (name) {
-  var greeting = 'Hello';
-  console.log(`${greeting} ${name}`);
-})(firstname); // IIFE
-
-(name) => {
-  return `Hello ${name}`;
-};
