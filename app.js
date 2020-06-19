@@ -683,12 +683,25 @@
 // FRAMEWORK ASIDE: IIFES AND SAFE CODE
 // =================================================================================
 
-// IIFE
-(function (global, name) {
-  var greeting = 'Hello';
-  global.greeting = 'Hello';
+// // IIFE
+// (function (global, name) {
+//   var greeting = 'Hello';
+//   global.greeting = 'Hello';
 
-  console.log(`${greeting} ${name}`);
-})(window, 'Davin'); // IIFE
+//   console.log(`${greeting} ${name}`);
+// })(window, 'Davin'); // IIFE
 
-console.log(greeting);
+// console.log(greeting);
+
+// =================================================================================
+// UNDERSTANDING CLOSURES
+// =================================================================================
+
+function greet(whattosay) {
+  return function (name) {
+    console.log(`${whattosay} ${name}`);
+  };
+}
+
+var sayHi = greet('Hi');
+sayHi('Davin');
