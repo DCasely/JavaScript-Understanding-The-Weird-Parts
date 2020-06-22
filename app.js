@@ -811,52 +811,103 @@
 // CALL(), APPLY(), BIND()
 // =================================================================================
 
-var person = {
-  firstname: 'John',
-  lastname: 'Doe',
-  getFullName: function () {
-    var fullname = `${this.firstname} ${this.lastname}`;
-    return fullname;
-  },
-};
+// var person = {
+//   firstname: 'John',
+//   lastname: 'Doe',
+//   getFullName: function () {
+//     var fullname = `${this.firstname} ${this.lastname}`;
+//     return fullname;
+//   },
+// };
 
-console.log(person.getFullName());
+// console.log(person.getFullName());
 
-var logName = function (lang1, lang2) {
-  console.log(`Logged: ${this.getFullName()}`);
-  console.log(`Arguments: ${lang1} ${lang2}`);
-  console.log('------------------------------');
-};
+// var logName = function (lang1, lang2) {
+//   console.log(`Logged: ${this.getFullName()}`);
+//   console.log(`Arguments: ${lang1} ${lang2}`);
+//   console.log('------------------------------');
+// };
 
-var logPersonName = logName.bind(person);
-logPersonName('en');
+// var logPersonName = logName.bind(person);
+// logPersonName('en');
 
-logName.call(person, 'en', 'es');
-logName.apply(person, ['en', 'es']);
+// logName.call(person, 'en', 'es');
+// logName.apply(person, ['en', 'es']);
 
-(function (lang1, lang2) {
-  console.log(`Logged: ${this.getFullName()}`);
-  console.log(`Arguments: ${lang1} ${lang2}`);
-  console.log('------------------------------');
-}.apply(person, ['en', 'xxx']));
+// (function (lang1, lang2) {
+//   console.log(`Logged: ${this.getFullName()}`);
+//   console.log(`Arguments: ${lang1} ${lang2}`);
+//   console.log('------------------------------');
+// }.apply(person, ['en', 'xxx']));
 
-// function borrowing
-var person2 = {
-  firstname: 'Jane',
-  lastname: 'Doe',
-};
+// // function borrowing
+// var person2 = {
+//   firstname: 'Jane',
+//   lastname: 'Doe',
+// };
 
-console.log(person.getFullName.apply(person2));
+// console.log(person.getFullName.apply(person2));
 
-// function currying
-function multiply(a, b) {
-  return a * b;
+// // function currying
+// function multiply(a, b) {
+//   return a * b;
+// }
+
+// var multiplyByTwo = multiply.bind(this, 2);
+// var multiplyByThree = multiply.bind(this, 3);
+
+// console.log(multiplyByTwo(8));
+// console.log(multiplyByThree(9));
+
+// // FUNCTION CURRYING: CREATING A COPY OF A FUNCTION BUT WITH SOME PRESET PARAMETERS
+
+// =================================================================================
+// FUNCTIONAL PROGRAMMING
+// =================================================================================
+
+function mapForEach(arr, fn) {
+  var newArr = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    newArr.push(fn(arr[i]));
+  }
+
+  return newArr;
 }
 
-var multiplyByTwo = multiply.bind(this, 2);
-var multiplyByThree = multiply.bind(this, 3);
+var arr1 = [1, 2, 3];
+console.log(arr1);
 
-console.log(multiplyByTwo(8));
-console.log(multiplyByThree(9));
+// var arr2 = [];
+// for (var i = 0; i < arr1.length; i++) {
+//   arr2.push(arr1[i] * 2);
+// }
 
-// FUNCTION CURRYING: CREATING A COPY OF A FUNCTION BUT WITH SOME PRESET PARAMETERS
+var arr2 = mapForEach(arr1, function (item) {
+  return item * 2;
+});
+
+console.log(arr2);
+
+var arr3 = mapForEach(arr1, function (item) {
+  return item > 2;
+});
+
+console.log(arr3);
+
+var checkPastLimit = function (limiter, item) {
+  return item > limiter;
+};
+
+var arr4 = mapForEach(arr1, checkPastLimit.bind(this, 1));
+
+console.log(arr4);
+
+var checkPastLimitSimplified = function (limiter) {
+  return function (limiter, item) {
+    return item > limiter;
+  }.bind(this, limiter);
+};
+
+var arr5 = mapForEach(arr1, checkPastLimitSimplified(1));
+console.log(arr5);
