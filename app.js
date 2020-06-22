@@ -752,20 +752,57 @@
 // FRAMEWORK ASIDE: FUNCTION FACTORIES
 // =================================================================================
 
-function makeGreeting(language) {
-  return function (firstname, lastname) {
-    if (language === 'en') {
-      console.log(`Hello ${firstname} ${lastname}`);
-    }
+// function makeGreeting(language) {
+//   return function (firstname, lastname) {
+//     if (language === 'en') {
+//       console.log(`Hello ${firstname} ${lastname}`);
+//     }
 
-    if (language === 'es') {
-      console.log(`Hola ${firstname} ${lastname}`);
-    }
-  };
+//     if (language === 'es') {
+//       console.log(`Hola ${firstname} ${lastname}`);
+//     }
+//   };
+// }
+
+// var greetEnglish = makeGreeting('en');
+// var greetSpanish = makeGreeting('es');
+
+// greetEnglish('Davin', 'Casely');
+// greetSpanish('Davin', 'Casely');
+
+// =================================================================================
+// CLOSURES AND CALLBACKS
+// =================================================================================
+
+function sayHiLater() {
+  var greeting = 'Hi!';
+
+  // ES6 SYNTAX
+  setTimeout(() => console.log(greeting), 3000);
+
+  setTimeout(function () {
+    console.log(greeting);
+  }, 3000);
 }
 
-var greetEnglish = makeGreeting('en');
-var greetSpanish = makeGreeting('es');
+sayHiLater();
 
-greetEnglish('Davin', 'Casely');
-greetSpanish('Davin', 'Casely');
+// jQuery uses function expressions and first-class functions!
+// $('button').click(function () {});
+
+// CALLBACK FUNCTION: A FUNCTION YOU GIVE TO ANOTHER FUNCTION, TO BE FUN WHEN THE OTHER FUNCTION IS FINISHED
+
+function tellMeWhenDone(callback) {
+  var a = 1000; // some work
+  var b = 1000; // some work
+
+  callback(); // the 'callback', it runs the function I give it!
+}
+
+tellMeWhenDone(function () {
+  console.log('I am done!');
+});
+
+tellMeWhenDone(function () {
+  console.log('All done...');
+});
