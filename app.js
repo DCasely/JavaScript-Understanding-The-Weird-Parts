@@ -774,35 +774,89 @@
 // CLOSURES AND CALLBACKS
 // =================================================================================
 
-function sayHiLater() {
-  var greeting = 'Hi!';
+// function sayHiLater() {
+//   var greeting = 'Hi!';
 
-  // ES6 SYNTAX
-  setTimeout(() => console.log(greeting), 3000);
+//   // ES6 SYNTAX
+//   setTimeout(() => console.log(greeting), 3000);
 
-  setTimeout(function () {
-    console.log(greeting);
-  }, 3000);
+//   setTimeout(function () {
+//     console.log(greeting);
+//   }, 3000);
+// }
+
+// sayHiLater();
+
+// // jQuery uses function expressions and first-class functions!
+// // $('button').click(function () {});
+
+// // CALLBACK FUNCTION: A FUNCTION YOU GIVE TO ANOTHER FUNCTION, TO BE FUN WHEN THE OTHER FUNCTION IS FINISHED
+
+// function tellMeWhenDone(callback) {
+//   var a = 1000; // some work
+//   var b = 1000; // some work
+
+//   callback(); // the 'callback', it runs the function I give it!
+// }
+
+// tellMeWhenDone(function () {
+//   console.log('I am done!');
+// });
+
+// tellMeWhenDone(function () {
+//   console.log('All done...');
+// });
+
+// =================================================================================
+// CALL(), APPLY(), BIND()
+// =================================================================================
+
+var person = {
+  firstname: 'John',
+  lastname: 'Doe',
+  getFullName: function () {
+    var fullname = `${this.firstname} ${this.lastname}`;
+    return fullname;
+  },
+};
+
+console.log(person.getFullName());
+
+var logName = function (lang1, lang2) {
+  console.log(`Logged: ${this.getFullName()}`);
+  console.log(`Arguments: ${lang1} ${lang2}`);
+  console.log('------------------------------');
+};
+
+var logPersonName = logName.bind(person);
+logPersonName('en');
+
+logName.call(person, 'en', 'es');
+logName.apply(person, ['en', 'es']);
+
+(function (lang1, lang2) {
+  console.log(`Logged: ${this.getFullName()}`);
+  console.log(`Arguments: ${lang1} ${lang2}`);
+  console.log('------------------------------');
+}.apply(person, ['en', 'xxx']));
+
+// function borrowing
+var person2 = {
+  firstname: 'Jane',
+  lastname: 'Doe',
+};
+
+console.log(person.getFullName.apply(person2));
+
+// function currying
+function multiply(a, b) {
+  return a * b;
 }
 
-sayHiLater();
+var multiplyByTwo = multiply.bind(this, 2);
+var multiplyByThree = multiply.bind(this, 3);
 
-// jQuery uses function expressions and first-class functions!
-// $('button').click(function () {});
+console.log(multiplyByTwo(8));
+console.log(multiplyByThree(9));
 
-// CALLBACK FUNCTION: A FUNCTION YOU GIVE TO ANOTHER FUNCTION, TO BE FUN WHEN THE OTHER FUNCTION IS FINISHED
-
-function tellMeWhenDone(callback) {
-  var a = 1000; // some work
-  var b = 1000; // some work
-
-  callback(); // the 'callback', it runs the function I give it!
-}
-
-tellMeWhenDone(function () {
-  console.log('I am done!');
-});
-
-tellMeWhenDone(function () {
-  console.log('All done...');
-});
+// FUNCTION CURRYING: CREATING A COPY OF A FUNCTION BUT WITH SOME PRESET PARAMETERS
