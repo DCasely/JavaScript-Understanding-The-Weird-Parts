@@ -1209,23 +1209,56 @@
 // ODDS AND ENDS
 // =================================================================================
 
-var people = [
-  {
-    // the 'john' object
-    firstname: 'John',
-    lastname: 'Doe',
-    addresses: ['111 Main St.', '222 Third St.'],
-  },
-  {
-    // the 'jane' object
-    firstname: 'Jane',
-    lastname: 'Doe',
-    addresses: ['333 Main St.', '444 Fifth St'],
-    greet: function () {
-      return 'Hello!';
-    },
-  },
-];
+// var people = [
+//   {
+//     // the 'john' object
+//     firstname: 'John',
+//     lastname: 'Doe',
+//     addresses: ['111 Main St.', '222 Third St.'],
+//   },
+//   {
+//     // the 'jane' object
+//     firstname: 'Jane',
+//     lastname: 'Doe',
+//     addresses: ['333 Main St.', '444 Fifth St'],
+//     greet: function () {
+//       return 'Hello!';
+//     },
+//   },
+// ];
 
-console.log(people);
-console.log(people[1].greet());
+// console.log(people);
+// console.log(people[1].greet());
+
+// =================================================================================
+// TYPEOF, INSTANCEOF, AND FIGURING OUT WHAT SOMETHING IS
+// =================================================================================
+
+var a = 3;
+console.log(typeof a);
+
+var b = 'Hello';
+console.log(typeof b);
+
+var c = {};
+console.log(typeof c);
+
+var d = [];
+console.log(typeof d);
+// console.log(d.toString());
+console.log(Object.prototype.toString.call(d));
+
+function Person(name) {
+  this.name = name;
+}
+
+var e = new Person('Jane');
+console.log(typeof e);
+console.log(e instanceof Person);
+
+console.log(typeof undefined);
+console.log(typeof null);
+
+var z = function () {};
+
+console.log(typeof z);
