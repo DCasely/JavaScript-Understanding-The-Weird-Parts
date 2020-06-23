@@ -1234,31 +1234,47 @@
 // TYPEOF, INSTANCEOF, AND FIGURING OUT WHAT SOMETHING IS
 // =================================================================================
 
-var a = 3;
-console.log(typeof a);
+// var a = 3;
+// console.log(typeof a);
 
-var b = 'Hello';
-console.log(typeof b);
+// var b = 'Hello';
+// console.log(typeof b);
 
-var c = {};
-console.log(typeof c);
+// var c = {};
+// console.log(typeof c);
 
-var d = [];
-console.log(typeof d);
-// console.log(d.toString());
-console.log(Object.prototype.toString.call(d));
+// var d = [];
+// console.log(typeof d);
+// // console.log(d.toString());
+// console.log(Object.prototype.toString.call(d));
 
-function Person(name) {
-  this.name = name;
+// function Person(name) {
+//   this.name = name;
+// }
+
+// var e = new Person('Jane');
+// console.log(typeof e);
+// console.log(e instanceof Person);
+
+// console.log(typeof undefined);
+// console.log(typeof null);
+
+// var z = function () {};
+// console.log(typeof z);
+
+// =================================================================================
+// STRICT MODE
+// =================================================================================
+
+function logNewPerson() {
+  'use strict';
+
+  var person2;
+  persom2 = {};
+  console.log(persom2);
 }
 
-var e = new Person('Jane');
-console.log(typeof e);
-console.log(e instanceof Person);
-
-console.log(typeof undefined);
-console.log(typeof null);
-
-var z = function () {};
-
-console.log(typeof z);
+let person;
+persom = {};
+console.log(persom);
+logNewPerson();
