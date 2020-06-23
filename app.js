@@ -916,11 +916,21 @@
 // FUNCTIONAL PROGRAMMING PART 2
 // =================================================================================
 
-var arr1 = [1, 2, 3];
-console.log(arr1);
+// var arr1 = [1, 2, 3];
+// console.log(arr1);
 
-var arr6 = arr1.map((item) => item * 3);
-console.log(arr6);
+// var arr6 = arr1.map((item) => item * 3);
+// console.log(arr6);
 
-var arr7 = [2, 3, 4, 5, 6, 7].filter((x) => x % 2 === 0);
-console.log(arr7);
+// var arr7 = [2, 3, 4, 5, 6, 7].filter((x) => x % 2 === 0);
+// console.log(arr7);
+
+// =================================================================================
+// OBJECT-ORIENTED JAVASCRIPT AND PROTOTYPAL INHERITANCE
+// =================================================================================
+
+// =================================================================================
+// CONCEPTUAL ASIDE: CLASSICAL VS PROTOTYPAL INHERITANCE
+// =================================================================================
+
+// INHERITANCE: ONE OBJECT GETS ACCESS TO THE PROPERTIES AND METHODS OF ANOTHER OBJECT.
