@@ -1266,15 +1266,19 @@
 // STRICT MODE
 // =================================================================================
 
-function logNewPerson() {
-  'use strict';
+// function logNewPerson() {
+//   'use strict';
 
-  var person2;
-  persom2 = {};
-  console.log(persom2);
-}
+//   var person2;
+//   persom2 = {};
+//   console.log(persom2);
+// }
 
-let person;
-persom = {};
-console.log(persom);
-logNewPerson();
+// let person;
+// persom = {};
+// console.log(persom);
+// logNewPerson();
+
+// =================================================================================
+// LEARNING FROM OTHER'S GOOD CODE
+// =================================================================================
