@@ -1016,19 +1016,43 @@
 // FUNCTION CONSTRUCTORS, 'new', AND THE HISTORY OF JAVASCRIPT
 // =================================================================================
 
+// function Person(firstname, lastname) {
+//   console.log(this);
+//   this.firstname = firstname;
+//   this.lastname = lastname;
+//   console.log('This function is invoked');
+
+//   // return { greeting: 'I got in the way' };
+// }
+
+// var john = new Person('John', 'Stockton');
+// console.log(john);
+
+// var jane = new Person('Jane', 'Wallace');
+// console.log(jane);
+
+// // FUNCTION CONSTRUCTORS: A NORMAL FUNCTION THAT IS USED TO CONSTRUCT OBJECTS
+
+// =================================================================================
+// FUNCTION CONSTRUCTORS, and '.prototype'
+// =================================================================================
+
 function Person(firstname, lastname) {
-  console.log(this);
   this.firstname = firstname;
   this.lastname = lastname;
-  console.log('This function is invoked');
-
-  // return { greeting: 'I got in the way' };
 }
+
+Person.prototype.getFullName = function () {
+  return `${this.firstname} ${this.lastname}`;
+};
 
 var john = new Person('John', 'Stockton');
 console.log(john);
 
 var jane = new Person('Jane', 'Wallace');
 console.log(jane);
+Person.prototype.getFormalFullName = function () {
+  return `${this.lastname}, ${this.firstname}`;
+};
 
-// FUNCTION CONSTRUCTORS: A NORMAL FUNCTION THAT IS USED TO CONSTRUCT OBJECTS
+console.log(john.getFormalFullName());
