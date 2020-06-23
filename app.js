@@ -1085,23 +1085,37 @@
 // CONCEPTUAL ASIDE: BUILT-IN FUNCTION CONSTRUCTORS
 // =================================================================================
 
-var a = new Number('3');
-console.log(a);
+// var a = new Number('3');
+// console.log(a);
 
-var b = new String('John');
-console.log(b);
+// var b = new String('John');
+// console.log(b);
 
-var c = new Date('3/1/2015');
-console.log(c);
+// var c = new Date('3/1/2015');
+// console.log(c);
 
-String.prototype.isLengthGreaterThan = function (limit) {
-  return this.length > limit;
-};
+// String.prototype.isLengthGreaterThan = function (limit) {
+//   return this.length > limit;
+// };
 
-console.log('John'.isLengthGreaterThan(5));
+// console.log('John'.isLengthGreaterThan(5));
 
-Number.prototype.isPositive = function () {
-  return this >= 0;
-};
+// Number.prototype.isPositive = function () {
+//   return this >= 0;
+// };
 
-console.log(Number(3).isPositive());
+// console.log(Number(3).isPositive());
+
+// =================================================================================
+// DANGEROUS ASIDE: BUILT-IN FUNCTION CONSTRUCTORS
+// =================================================================================
+
+var a = 3;
+var b = new Number(3);
+console.log(typeof a);
+console.log(typeof b);
+console.log(a == b);
+console.log(a === b);
+
+var c = Number('3');
+console.log(typeof c);
