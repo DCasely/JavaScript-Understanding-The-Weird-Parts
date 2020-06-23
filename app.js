@@ -934,3 +934,33 @@
 // =================================================================================
 
 // INHERITANCE: ONE OBJECT GETS ACCESS TO THE PROPERTIES AND METHODS OF ANOTHER OBJECT.
+
+// =================================================================================
+// UNDERSTANDING THE PROTOTYPE
+// =================================================================================
+
+var person = {
+  firstname: 'Default',
+  lastname: 'Default',
+  getFullName: function () {
+    return `${this.firstname} ${this.lastname}`;
+  },
+};
+
+var john = {
+  firstname: 'John',
+  lastname: 'Doe',
+};
+
+// don't do this EVER! for demo purposes only!!!
+john.__proto__ = person;
+console.log(john.getFullName());
+console.log(john.firstname);
+console.log(john.lastname);
+
+var jane = {
+  firstname: 'Jane',
+};
+
+jane.__proto__ = person;
+console.log(jane.getFullName());
