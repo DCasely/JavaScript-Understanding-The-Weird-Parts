@@ -1110,12 +1110,28 @@
 // DANGEROUS ASIDE: BUILT-IN FUNCTION CONSTRUCTORS
 // =================================================================================
 
-var a = 3;
-var b = new Number(3);
-console.log(typeof a);
-console.log(typeof b);
-console.log(a == b);
-console.log(a === b);
+// var a = 3;
+// var b = new Number(3);
+// console.log(typeof a);
+// console.log(typeof b);
+// console.log(a == b);
+// console.log(a === b);
 
-var c = Number('3');
-console.log(typeof c);
+// var c = Number('3');
+// console.log(typeof c);
+
+// =================================================================================
+// DANGEROUS ASIDE: ARRAYS AND FOR...IN
+// =================================================================================
+
+Array.prototype.myCustomFeature = 'cool!';
+
+var arr = ['John', 'Jane', 'Jim'];
+
+for (const key in arr) {
+  console.log(`${key}: ${arr[key]}`);
+}
+
+for (let i = 0; i < arr.length; i++) {
+  console.log(`${i}: ${arr[i]}`);
+}
