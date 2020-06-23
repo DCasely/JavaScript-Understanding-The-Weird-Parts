@@ -979,35 +979,56 @@
 
 // REFLECTION: AN OBJECT CAN LOOK AT ITSELF, LISTING AND CHANGING ITS PROPERTIES AND METHODS.
 
-var person = {
-  firstname: 'Default',
-  lastname: 'Default',
-  getFullName: function () {
-    return `${this.firstname} ${this.lastname}`;
-  },
-};
+// var person = {
+//   firstname: 'Default',
+//   lastname: 'Default',
+//   getFullName: function () {
+//     return `${this.firstname} ${this.lastname}`;
+//   },
+// };
 
-var john = {
-  firstname: 'John',
-  lastname: 'Doe',
-};
+// var john = {
+//   firstname: 'John',
+//   lastname: 'Doe',
+// };
 
-// don't do this EVER! for demo purposes only!!!
-john.__proto__ = person;
+// // don't do this EVER! for demo purposes only!!!
+// john.__proto__ = person;
 
-for (const key in john) {
-  if (john.hasOwnProperty(key)) console.log(`${key}: ${john[key]}`);
+// for (const key in john) {
+//   if (john.hasOwnProperty(key)) console.log(`${key}: ${john[key]}`);
+// }
+
+// var jane = {
+//   address: '111 Main St.',
+//   getFormalFullName: function () {
+//     return `${this.lastname}, ${this.firstname}`;
+//   },
+// };
+
+// var jim = {
+//   getFirstName: function () {
+//     return firstname;
+//   },
+// };
+
+// =================================================================================
+// FUNCTION CONSTRUCTORS, 'new', AND THE HISTORY OF JAVASCRIPT
+// =================================================================================
+
+function Person(firstname, lastname) {
+  console.log(this);
+  this.firstname = firstname;
+  this.lastname = lastname;
+  console.log('This function is invoked');
+
+  // return { greeting: 'I got in the way' };
 }
 
-var jane = {
-  address: '111 Main St.',
-  getFormalFullName: function () {
-    return `${this.lastname}, ${this.firstname}`;
-  },
-};
+var john = new Person('John', 'Stockton');
+console.log(john);
 
-var jim = {
-  getFirstName: function () {
-    return firstname;
-  },
-};
+var jane = new Person('Jane', 'Wallace');
+console.log(jane);
+
+// FUNCTION CONSTRUCTORS: A NORMAL FUNCTION THAT IS USED TO CONSTRUCT OBJECTS
