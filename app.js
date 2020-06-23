@@ -1173,30 +1173,59 @@
 // ES6 AND CLASSES
 // =================================================================================
 
-//SYNTACTIC SUGAR: A DIFFERENT WAY TO TYPE SOMETHING THAT DOESN'T CHANGE HOW IT WORKS UNDER THE HOOD
-class Person {
-  constructor(firstname, lastname) {
-    this.firstname = firstname;
-    this.lastname = lastname;
-  }
+// //SYNTACTIC SUGAR: A DIFFERENT WAY TO TYPE SOMETHING THAT DOESN'T CHANGE HOW IT WORKS UNDER THE HOOD
+// class Person {
+//   constructor(firstname, lastname) {
+//     this.firstname = firstname;
+//     this.lastname = lastname;
+//   }
 
-  greet() {
-    return `Hi ${this.firstname}`;
-  }
-}
+//   greet() {
+//     return `Hi ${this.firstname}`;
+//   }
+// }
 
-class InformalPerson extends Person {
-  constructor(firstname, lastname) {
-    super(firstname, lastname);
-  }
+// class InformalPerson extends Person {
+//   constructor(firstname, lastname) {
+//     super(firstname, lastname);
+//   }
 
-  greet() {
-    return `Yo ${this.firstname}`;
-  }
-}
+//   greet() {
+//     return `Yo ${this.firstname}`;
+//   }
+// }
 
-const davin = new Person('Davin', 'Casely');
-console.log(davin.greet());
+// const davin = new Person('Davin', 'Casely');
+// console.log(davin.greet());
 
-const informal = new InformalPerson('inform', 'thisguy');
-console.log(informal.greet());
+// const informal = new InformalPerson('inform', 'thisguy');
+// console.log(informal.greet());
+
+// =================================================================================
+// SECTION 7: ODDS AND ENDS
+// =================================================================================
+
+// =================================================================================
+// ODDS AND ENDS
+// =================================================================================
+
+var people = [
+  {
+    // the 'john' object
+    firstname: 'John',
+    lastname: 'Doe',
+    addresses: ['111 Main St.', '222 Third St.'],
+  },
+  {
+    // the 'jane' object
+    firstname: 'Jane',
+    lastname: 'Doe',
+    addresses: ['333 Main St.', '444 Fifth St'],
+    greet: function () {
+      return 'Hello!';
+    },
+  },
+];
+
+console.log(people);
+console.log(people[1].greet());
