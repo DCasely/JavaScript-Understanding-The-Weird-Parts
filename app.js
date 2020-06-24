@@ -1287,5 +1287,15 @@
 // DEEP DIVE SOURCE CODE
 // =================================================================================
 
-var q = $('ul.people li');
-console.log(q);
+// var q = $('ul.people').addClass('newclass').removeClass('people');
+// console.log(q);
+
+// // METHOD CHAINING: CALLING ONE METHOD AFTER ANOTHER, AND EACH METHOD AFFECTS THE PARENT OBJECT
+
+// =================================================================================
+// SECTION 9: LET'S BUILD A FRAMEWORK/LIBRARY
+// =================================================================================
+
+// =================================================================================
+// STRUCTURING SAFE CODE
+// =================================================================================
